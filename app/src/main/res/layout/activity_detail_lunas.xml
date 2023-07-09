@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.lunas.detail.DetailLunasActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Detail Pemesanan"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pelanggan"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="Nama Pelanggan" />
+
+        <EditText
+            android:id="@+id/etNamaPelanggan"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tv_alamat_pelanggan"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Alamat Pelanggan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNamaPegawai" />
+
+        <EditText
+            android:id="@+id/etAlamat"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvPakaian"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Pakaian: " />
+
+        <EditText
+            android:id="@+id/etPakaian"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:inputType="none"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tvSepatu"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Sepatu: " />
+
+        <EditText
+            android:id="@+id/etSepatu"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:inputType="none"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tvSprei"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Bed Cover: " />
+
+        <EditText
+            android:id="@+id/etSprei"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:inputType="none"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tvKarpet"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Karpet: " />
+
+
+        <EditText
+            android:id="@+id/etKarpet"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:inputType="none"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Total Harga: " />
+
+        <EditText
+            android:id="@+id/etTotal"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:inputType="none"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tvTanggalAmbil"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Tanggal Ambil "
+            />
+
+        <EditText
+            android:id="@+id/etTanggalAmbil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:focusable="false"
+            android:clickable="false"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvStatusBayar"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Status Pembayaran: " />
+
+
+        <Spinner
+            android:id="@+id/SpinnerStatusPembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="selected item"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:text="Update"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/blue"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

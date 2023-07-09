@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp"
+    android:id="@+id/cv_item_history"
+    app:cardUseCompatPadding="true">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textViewTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Tanggal: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewNamaPelanggan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Nama Pelanggan: " />
+
+        <TextView
+            android:id="@+id/textViewTotalPembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Total Pembayaran: " />
+
+
+        <TextView
+            android:id="@+id/tvStatusPembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Pesanan Selesai"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

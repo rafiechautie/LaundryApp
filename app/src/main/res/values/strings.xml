@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">LaundryApp</string>
+    <string name="invalid_email_password_login">Your email or password is invalid</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="invalid_password">Password must be more than 6 characters</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Masuk</string>
+    <string name="title_activity_home_admin">HomeAdminActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="print">PDFprintWithWIFIprinter</string>
+
+    <string name="employee_name">Nama Pegawai</string>
+
+    <string name="submit">Submit</string>
+    <string name="delete">Hapus</string>
+
+    <string name="select">Select Item</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="cancel">Batal</string>
+    <string name="empty">Field can not be blank</string>
+
+    <string name="message_cancel">Apakah anda ingin membatalkan perubahan pada form?</string>
+    <string name="message_delete">Apakah anda yakin ingin menghapus item ini?</string>
+
+    <string name="added">Satu item berhasil ditambahkan</string>
+    <string name="changed">Satu item berhasil diubah</string>
+    <string name="deleted">Satu item berhasil dihapus</string>
+
+    <string name="change">Ubah</string>
+    <string name="add">Tambah</string>
+    <string name="save">Simpan</string>
+    <string name="update">Update</string>
+
+    <string name="send_success">Berhasil terkirim</string>
+    <string name="send_error">Gagal terkirim</string>
+
+    <string-array name="usertype_array">
+        <item>Pemilik</item>
+        <item>Pegawai</item>
+    </string-array>
+
+    <string-array name="statusPembayaran_array">
+        <item>Lunas</item>
+        <item>Belum Lunas</item>
+    </string-array>
+
+    <string-array name="bulan_array">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+    <string-array name="tahun_array">
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+        <item>2030</item>
+        <item>2031</item>
+        <item>2032</item>
+        <item>2033</item>
+        <item>2034</item>
+        <item>2035</item>
+        <!-- Tambahkan tahun-tahun lainnya sesuai kebutuhan -->
+    </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+</resources>

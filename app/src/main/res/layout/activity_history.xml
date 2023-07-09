@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".view.history.HistoryActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih Riwayat Transaksi"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:textSize="14sp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupTransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonBulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaksi per Bulan"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaksi per Tahun" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/layoutBulan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Bulan:" />
+
+        <Spinner
+            android:id="@+id/spinnerBulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTahun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Tahun:" />
+
+        <Spinner
+            android:id="@+id/spinnerTahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonLihatTransaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        android:text="Lihat Transaksi" />
+
+    <TextView
+        android:id="@+id/textViewTotalTransaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Lihat Riwayat Transaksi Setiap Bulan dan Tahun "
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <!-- RecyclerView untuk menampilkan transaksi -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_history"/>
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data tidak ada Silahkan Lakukan Pemesanan"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="150dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:visibility="gone"
+        />
+
+</LinearLayout>
