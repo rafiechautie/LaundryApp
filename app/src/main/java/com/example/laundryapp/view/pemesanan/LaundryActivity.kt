@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -86,11 +87,27 @@ class LaundryActivity : AppCompatActivity() {
     }
 
     private fun setInputData() {
+
+        val nama = intent.getStringExtra(EXTRA_NAMA)
+        val alamat = intent.getStringExtra(EXTRA_ALAMAT)
+
+        if (nama != null) {
+            Log.d("test", nama)
+        }
+        if (alamat != null) {
+            Log.d("test", alamat)
+        }
+
         btnCheckout.setOnClickListener {
             if (totalItems == 0 || totalPrice == 0){
                 Toast.makeText(this@LaundryActivity, "Harap pilih jenis barang!", Toast.LENGTH_SHORT).show()
             }else{
                 val moveWithDataIntent = Intent(this@LaundryActivity, CheckOutActivity::class.java)
+
+                if (nama != null && alamat != null) {
+                    moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_NAMA, nama)
+                    moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_ALAMAT, alamat)
+                }
                 moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_PAKAIAN, itemCount1)
                 moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_SEPATU, itemCount2)
                 moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_SPREI, itemCount3)
@@ -249,5 +266,10 @@ class LaundryActivity : AppCompatActivity() {
         binding.tvJumlahBarang.setText("0 items");
         binding.tvTotalPrice.setText("Rp 0");
         binding.tvInfo.setText("Cuci basah merupakan proses pencucian pakaian biasa menggunakan air dan deterjen.");
+    }
+
+    companion object{
+        const val EXTRA_NAMA = "EXTRA_NAMA"
+        const val EXTRA_ALAMAT = "EXTRA_ALAMAT"
     }
 }

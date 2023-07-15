@@ -67,6 +67,16 @@ class CheckOutActivity : AppCompatActivity() {
         val sprei = intent.getIntExtra(EXTRA_SPREI, 0)
         val karpet = intent.getIntExtra(EXTRA_KARPET, 0)
         val totalPrice = intent.getIntExtra(EXTRA_TOTAL_PRICE, 0)
+        val nama = intent.getStringExtra(EXTRA_NAMA)
+        val alamat = intent.getStringExtra(EXTRA_ALAMAT)
+
+        if (nama != null && alamat != null)
+        {
+            binding.etNamaPelanggan.setText(nama.toString())
+            binding.etAlamat.setText(alamat.toString())
+            binding.etNamaPelanggan.isEnabled = false
+            binding.etAlamat.isEnabled = false
+        }
 
         binding.etPakaian.setText(pakaian.toString())
         binding.etSepatu.setText(sepatu.toString())
@@ -192,6 +202,8 @@ class CheckOutActivity : AppCompatActivity() {
 
     companion object{
         private val TAG = "LAUNDRY ACTIVITY"
+        const val EXTRA_NAMA = "EXTRA_NAMA"
+        const val EXTRA_ALAMAT = "EXTRA_ALAMAT"
         const val EXTRA_PAKAIAN = "extra_pakaian"
         const val EXTRA_SEPATU = "extra_sepatu"
         const val EXTRA_SPREI = "extra_sprei"

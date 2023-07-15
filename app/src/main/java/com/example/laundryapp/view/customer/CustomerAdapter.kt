@@ -10,6 +10,7 @@ import com.example.laundryapp.databinding.ItemCustomerBinding
 import com.example.laundryapp.databinding.ItemLunasBinding
 import com.example.laundryapp.helper.FunctionHelper
 import com.example.laundryapp.helper.PemesananDiffCallback
+import com.example.laundryapp.view.customer.detail.DetailCustomerActivity
 import com.example.laundryapp.view.lunas.LunasAdapter
 import com.example.laundryapp.view.lunas.detail.DetailLunasActivity
 
@@ -42,8 +43,8 @@ class CustomerAdapter: RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder>(
                 tvNamaPelanggan.text = pemesanan.nama_pelanggan
                 tvAlamatPelangganPesanan.text = pemesanan.alamat_pelanggan
                 cvItemCustomer.setOnClickListener {
-                    val intent = Intent(it.context, DetailLunasActivity::class.java)
-                    intent.putExtra(DetailLunasActivity.EXTRA_PEMESANAN, pemesanan)
+                    val intent = Intent(it.context, DetailCustomerActivity::class.java)
+                    intent.putExtra(DetailCustomerActivity.EXTRA_CUSTOMER, pemesanan)
                     it.context.startActivity(intent)
                 }
 
