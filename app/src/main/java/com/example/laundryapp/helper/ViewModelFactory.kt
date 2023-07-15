@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.laundryapp.view.belumlunas.BelumLunasViewModel
+import com.example.laundryapp.view.customer.CustomerViewModel
 import com.example.laundryapp.view.history.HistoryViewModel
 import com.example.laundryapp.view.lunas.LunasViewModel
 import com.example.laundryapp.view.lunas.detail.DetailPemesananViewModel
@@ -37,6 +38,8 @@ class ViewModelFactory private constructor(private val mApplication: Application
             return DetailPemesananViewModel(mApplication) as T
         }else if(modelClass.isAssignableFrom(HistoryViewModel::class.java)){
             return HistoryViewModel(mApplication) as T
+        }else if(modelClass.isAssignableFrom(CustomerViewModel::class.java)){
+            return CustomerViewModel(mApplication) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }

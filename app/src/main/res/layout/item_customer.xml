@@ -6,7 +6,7 @@
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="15dp"
     app:cardElevation="3dp"
-    android:id="@+id/cv_item_belum_lunas"
+    android:id="@+id/cv_item_customer"
     app:cardUseCompatPadding="true">
 
     <LinearLayout

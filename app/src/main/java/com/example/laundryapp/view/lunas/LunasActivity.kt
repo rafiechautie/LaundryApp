@@ -56,19 +56,6 @@ class LunasActivity : AppCompatActivity() {
         binding.rvItemLunas.adapter = adapter
     }
 
-    private fun setUpView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
