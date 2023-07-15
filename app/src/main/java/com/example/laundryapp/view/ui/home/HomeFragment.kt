@@ -12,6 +12,7 @@ import com.example.laundryapp.R
 import com.example.laundryapp.database.Preferences
 import com.example.laundryapp.databinding.FragmentHomeBinding
 import com.example.laundryapp.view.belumlunas.BelumLunasActivity
+import com.example.laundryapp.view.customer.CustomerActivity
 import com.example.laundryapp.view.employee.EmployeeActivity
 import com.example.laundryapp.view.history.HistoryActivity
 import com.example.laundryapp.view.lunas.LunasActivity
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var btnLunas: View
     private lateinit var btnBelumLunas: View
     private lateinit var btnHistory: View
+    private lateinit var btnCustomer: View
 
     private lateinit var tvUsername: TextView
 
@@ -55,6 +57,7 @@ class HomeFragment : Fragment() {
         btnLunas = view.findViewById(R.id.lunas)
         btnBelumLunas = view.findViewById(R.id.belumlunas)
         btnHistory = view.findViewById(R.id.historyTransaksi)
+        btnCustomer = view.findViewById(R.id.customer)
 
         tvUsername = view.findViewById(R.id.username)
 
@@ -82,6 +85,10 @@ class HomeFragment : Fragment() {
 
         btnHistory.setOnClickListener {
             startActivity(Intent(requireActivity(), HistoryActivity::class.java))
+        }
+
+        btnCustomer.setOnClickListener {
+            startActivity(Intent(requireActivity(), CustomerActivity::class.java))
         }
 
     }
