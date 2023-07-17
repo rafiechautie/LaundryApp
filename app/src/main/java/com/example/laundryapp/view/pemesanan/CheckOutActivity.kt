@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -69,13 +70,26 @@ class CheckOutActivity : AppCompatActivity() {
         val totalPrice = intent.getIntExtra(EXTRA_TOTAL_PRICE, 0)
         val nama = intent.getStringExtra(EXTRA_NAMA)
         val alamat = intent.getStringExtra(EXTRA_ALAMAT)
+        val noHp = intent.getStringExtra(EXTRA_NO_HP)
 
-        if (nama != null && alamat != null)
+        if (nama != null) {
+            Log.d("test", nama)
+        }
+        if (alamat != null) {
+            Log.d("test", alamat)
+        }
+        if (noHp != null) {
+            Log.d("test", noHp)
+        }
+
+        if (nama != null && alamat != null && noHp != null)
         {
             binding.etNamaPelanggan.setText(nama.toString())
             binding.etAlamat.setText(alamat.toString())
+            binding.etNoHp.setText(noHp.toString())
             binding.etNamaPelanggan.isEnabled = false
             binding.etAlamat.isEnabled = false
+            binding.etNoHp.isEnabled = false
         }
 
         binding.etPakaian.setText(pakaian.toString())
@@ -96,6 +110,7 @@ class CheckOutActivity : AppCompatActivity() {
         binding.btnCheckout.setOnClickListener {
             val name = binding.etNamaPelanggan.text.toString().trim()
             val alamatPelanggan = binding.etAlamat.text.toString().trim()
+            val noHpPelanggan = binding.etNoHp.text.toString().trim()
             val tanggalPengambilan = binding.etTanggalAmbil.text.toString().trim()
             when{
                 name.isEmpty() -> {
@@ -104,10 +119,14 @@ class CheckOutActivity : AppCompatActivity() {
                 alamatPelanggan.isEmpty() -> {
                     binding.etAlamat.error = getString(R.string.empty)
                 }
+                noHpPelanggan.isEmpty()-> {
+                    binding.etAlamat.error = getString(R.string.empty)
+                }
                 else -> {
                     pemesanan.let { pemesanan ->
                         pemesanan?.nama_pelanggan = name
                         pemesanan?.alamat_pelanggan = alamatPelanggan
+                        pemesanan?.no_hp = noHpPelanggan
                         pemesanan?.jumlah_pakaian = pakaian
                         pemesanan?.jumlah_sepatu = sepatu
                         pemesanan?.jumlah_bed_cover = sprei
@@ -126,6 +145,7 @@ class CheckOutActivity : AppCompatActivity() {
                             0,
                             name,
                             alamatPelanggan,
+                            noHpPelanggan,
                             pakaian,
                             sepatu,
                             sprei,
@@ -149,6 +169,7 @@ class CheckOutActivity : AppCompatActivity() {
                     moveWithDataIntent.putExtra(CheckOutSuccessActivity.EXTRA_DATE, DateHelper.getCurrentDate())
                     moveWithDataIntent.putExtra(CheckOutSuccessActivity.EXTRA_STATUS, statusPembayaran)
                     moveWithDataIntent.putExtra(CheckOutSuccessActivity.EXTRA_ALAMAT, alamatPelanggan)
+                    moveWithDataIntent.putExtra(CheckOutSuccessActivity.EXTRA_NO_HP, noHpPelanggan)
                     moveWithDataIntent.putExtra(CheckOutSuccessActivity.EXTRA_TANGGAL_PENGAMBILAN, tanggalPengambilan)
                     startActivity(moveWithDataIntent)
                     finish()
@@ -204,6 +225,7 @@ class CheckOutActivity : AppCompatActivity() {
         private val TAG = "LAUNDRY ACTIVITY"
         const val EXTRA_NAMA = "EXTRA_NAMA"
         const val EXTRA_ALAMAT = "EXTRA_ALAMAT"
+        const val EXTRA_NO_HP = "EXTRA_NO_HP"
         const val EXTRA_PAKAIAN = "extra_pakaian"
         const val EXTRA_SEPATU = "extra_sepatu"
         const val EXTRA_SPREI = "extra_sprei"

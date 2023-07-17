@@ -79,6 +79,7 @@ class DetailBelumLunasActivity : AppCompatActivity() {
         pemesanan?.let { pemesanan ->
             binding.etNamaPelanggan.setText(pemesanan.nama_pelanggan)
             binding.etAlamat.setText(pemesanan.alamat_pelanggan)
+            binding.etNoHp.setText(pemesanan.no_hp)
             binding.etPakaian.setText(pemesanan.jumlah_pakaian.toString())
             binding.etSepatu.setText(pemesanan.jumlah_sepatu.toString())
             binding.etSprei.setText(pemesanan.jumlah_bed_cover.toString())
@@ -121,6 +122,7 @@ class DetailBelumLunasActivity : AppCompatActivity() {
             createPDF(
                 pemesanan?.nama_pelanggan.toString(),
                 pemesanan?.alamat_pelanggan.toString(),
+                pemesanan?.no_hp.toString(),
                 pemesanan?.date,
                 pemesanan?.tanggal_pengambilan,
                 pemesanan?.jumlah_pakaian,
@@ -134,7 +136,7 @@ class DetailBelumLunasActivity : AppCompatActivity() {
         }
     }
 
-    fun createPDF(name: String?, alamat: String?, date: String?, tanggal_ambil: String?, pakaian: Int?, sepatu: Int?, sprei: Int?, karpet: Int?, status: String?, totalPrice: Int?) {
+    fun createPDF(name: String?, alamat: String?, noHp: String?, date: String?, tanggal_ambil: String?, pakaian: Int?, sepatu: Int?, sprei: Int?, karpet: Int?, status: String?, totalPrice: Int?) {
         // Create an instance of Document
         val document = Document()
 
@@ -163,6 +165,7 @@ class DetailBelumLunasActivity : AppCompatActivity() {
         val customertanggalAmbil = "Tanggal Ambil: $tanggal_ambil"
         val customerName = "Nama Customer: $name"
         val customerAlamat = "Alamat Customer: $alamat"
+        val customerNoHp = "Nomor Handphone Customer: $noHp"
         val customerPakaian = "$pakaian Kg"
         val customerSepatu = "$sepatu Kg"
         val customerSprei = "$sprei Kg"
@@ -204,6 +207,10 @@ class DetailBelumLunasActivity : AppCompatActivity() {
         val centeredTextAlamat = Paragraph(customerAlamat)
         centeredTextAlamat.alignment = Element.ALIGN_CENTER
         paragraph.add(centeredTextAlamat)
+
+        val centeredTextNoHp = Paragraph(customerNoHp)
+        centeredTextNoHp.alignment = Element.ALIGN_CENTER
+        paragraph.add(centeredTextNoHp)
 
         val centeredTextDate = Paragraph(date)
         centeredTextDate.alignment = Element.ALIGN_CENTER

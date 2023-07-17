@@ -20,6 +20,9 @@ data class Pemesanan (
     @ColumnInfo(name = "alamat_pelanggan")
     var alamat_pelanggan: String? = null,
 
+    @ColumnInfo(name = "no_hp")
+    var no_hp: String? = null,
+
     @ColumnInfo(name = "jumlah_pakaian")
     var jumlah_pakaian: Int,
 

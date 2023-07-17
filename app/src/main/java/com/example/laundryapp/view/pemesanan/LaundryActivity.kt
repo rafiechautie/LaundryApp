@@ -90,13 +90,14 @@ class LaundryActivity : AppCompatActivity() {
 
         val nama = intent.getStringExtra(EXTRA_NAMA)
         val alamat = intent.getStringExtra(EXTRA_ALAMAT)
+        val noHp = intent.getStringExtra(EXTRA_NO_HP)
 
-        if (nama != null) {
-            Log.d("test", nama)
-        }
-        if (alamat != null) {
-            Log.d("test", alamat)
-        }
+//        if (nama != null) {
+//            Log.d("test", nama)
+//        }
+//        if (alamat != null) {
+//            Log.d("test", alamat)
+//        }
 
         btnCheckout.setOnClickListener {
             if (totalItems == 0 || totalPrice == 0){
@@ -104,9 +105,10 @@ class LaundryActivity : AppCompatActivity() {
             }else{
                 val moveWithDataIntent = Intent(this@LaundryActivity, CheckOutActivity::class.java)
 
-                if (nama != null && alamat != null) {
+                if (nama != null && alamat != null && noHp != null) {
                     moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_NAMA, nama)
                     moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_ALAMAT, alamat)
+                    moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_NO_HP, noHp)
                 }
                 moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_PAKAIAN, itemCount1)
                 moveWithDataIntent.putExtra(CheckOutActivity.EXTRA_SEPATU, itemCount2)
@@ -271,5 +273,6 @@ class LaundryActivity : AppCompatActivity() {
     companion object{
         const val EXTRA_NAMA = "EXTRA_NAMA"
         const val EXTRA_ALAMAT = "EXTRA_ALAMAT"
+        const val EXTRA_NO_HP = "EXTRA_NO_HP"
     }
 }

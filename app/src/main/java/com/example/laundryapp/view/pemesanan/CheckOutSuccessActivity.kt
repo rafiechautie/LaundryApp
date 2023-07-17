@@ -62,6 +62,7 @@ class CheckOutSuccessActivity : AppCompatActivity() {
         val karpet = intent.getIntExtra(EXTRA_KARPET, 0)
         val totalPrice = intent.getIntExtra(EXTRA_TOTAL_PRICE, 0)
         val alamat = intent.getStringExtra(EXTRA_ALAMAT)
+        val noHp = intent.getStringExtra(EXTRA_NO_HP)
         val date = intent.getStringExtra(EXTRA_DATE)
         val status = intent.getStringExtra(EXTRA_STATUS)
         val tanggalPengambilan = intent.getStringExtra(EXTRA_TANGGAL_PENGAMBILAN)
@@ -86,6 +87,7 @@ class CheckOutSuccessActivity : AppCompatActivity() {
             createPDF(
                 name,
                 alamat,
+                noHp,
                 date,
                 tanggalPengambilan,
                 pakaian,
@@ -101,7 +103,7 @@ class CheckOutSuccessActivity : AppCompatActivity() {
         }
     }
 
-    fun createPDF(name: String?, alamat: String?, date: String?, tanggal_ambil: String?, pakaian: Int?, sepatu: Int?, sprei: Int?, karpet: Int?, status: String?, totalPrice: Int?) {
+    fun createPDF(name: String?, alamat: String?, noHp: String?, date: String?, tanggal_ambil: String?, pakaian: Int?, sepatu: Int?, sprei: Int?, karpet: Int?, status: String?, totalPrice: Int?) {
         // Create an instance of Document
         val document = Document()
 
@@ -130,6 +132,7 @@ class CheckOutSuccessActivity : AppCompatActivity() {
         val customertanggalAmbil = "Tanggal Ambil: $tanggal_ambil"
         val customerName = "Nama Customer: $name"
         val customerAlamat = "Alamat Customer: $alamat"
+        val customerNoHp = "Nomor Handphone Customer: $noHp"
         val customerPakaian = "$pakaian Kg"
         val customerSepatu = "$sepatu Kg"
         val customerSprei = "$sprei Kg"
@@ -171,6 +174,10 @@ class CheckOutSuccessActivity : AppCompatActivity() {
         val centeredTextAlamat = Paragraph(customerAlamat)
         centeredTextAlamat.alignment = Element.ALIGN_CENTER
         paragraph.add(centeredTextAlamat)
+
+        val centeredTextNoHp = Paragraph(customerNoHp)
+        centeredTextNoHp.alignment = Element.ALIGN_CENTER
+        paragraph.add(centeredTextNoHp)
 
         val centeredTextDate = Paragraph(date)
         centeredTextDate.alignment = Element.ALIGN_CENTER
@@ -312,6 +319,7 @@ class CheckOutSuccessActivity : AppCompatActivity() {
         const val EXTRA_TOTAL_PRICE = "extra_total_price"
         const val EXTRA_DATE = "extra_date"
         const val EXTRA_ALAMAT = "extra_alamat"
+        const val EXTRA_NO_HP = "extra_no_hp"
         const val EXTRA_STATUS = "extra_status"
         const val EXTRA_TANGGAL_PENGAMBILAN = "extra_tanggal_pengambilan"
     }

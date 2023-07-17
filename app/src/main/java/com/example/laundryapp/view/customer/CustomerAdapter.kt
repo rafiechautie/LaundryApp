@@ -42,6 +42,7 @@ class CustomerAdapter: RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder>(
             with(binding) {
                 tvNamaPelanggan.text = pemesanan.nama_pelanggan
                 tvAlamatPelangganPesanan.text = pemesanan.alamat_pelanggan
+                tvNoHp.text = pemesanan.no_hp
                 cvItemCustomer.setOnClickListener {
                     val intent = Intent(it.context, DetailCustomerActivity::class.java)
                     intent.putExtra(DetailCustomerActivity.EXTRA_CUSTOMER, pemesanan)

@@ -34,6 +34,15 @@
             android:textColor="@color/primaryDark"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/tv_no_hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Nomor HP Pelanggan"
+            android:textColor="@color/primaryDark"
+            android:textSize="12sp" />
+
 
     </LinearLayout>
 

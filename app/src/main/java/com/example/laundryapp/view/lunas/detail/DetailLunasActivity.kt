@@ -40,6 +40,7 @@ class DetailLunasActivity : AppCompatActivity() {
         pemesanan?.let { pemesanan ->
             binding.etNamaPelanggan.setText(pemesanan.nama_pelanggan)
             binding.etAlamat.setText(pemesanan.alamat_pelanggan)
+            binding.etNoHp.setText(pemesanan.no_hp)
             binding.etPakaian.setText(pemesanan.jumlah_pakaian.toString())
             binding.etSepatu.setText(pemesanan.jumlah_sepatu.toString())
             binding.etSprei.setText(pemesanan.jumlah_bed_cover.toString())

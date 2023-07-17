@@ -24,6 +24,7 @@ class DetailCustomerActivity : AppCompatActivity() {
 
     private var nama = ""
     private var alamat = ""
+    private var noHp = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +36,10 @@ class DetailCustomerActivity : AppCompatActivity() {
         customer?.let { pemesanan ->
             binding.etNamaPelanggan.setText(pemesanan.nama_pelanggan)
             binding.etAlamat.setText(pemesanan.alamat_pelanggan)
+            binding.etNoHp.setText(pemesanan.no_hp)
             nama = pemesanan.nama_pelanggan.toString()
             alamat = pemesanan.alamat_pelanggan.toString()
+            noHp = pemesanan.no_hp.toString()
         }
 
 //        Log.d("test", nama)
@@ -46,6 +49,7 @@ class DetailCustomerActivity : AppCompatActivity() {
             val moveWithDataIntent = Intent(this@DetailCustomerActivity, LaundryActivity::class.java)
             moveWithDataIntent.putExtra(LaundryActivity.EXTRA_NAMA, nama)
             moveWithDataIntent.putExtra(LaundryActivity.EXTRA_ALAMAT, alamat)
+            moveWithDataIntent.putExtra(LaundryActivity.EXTRA_NO_HP, noHp)
             startActivity(moveWithDataIntent)
             Toast.makeText(this@DetailCustomerActivity, "Pesanan Anda sedang diproses", Toast.LENGTH_SHORT).show()
             finish()

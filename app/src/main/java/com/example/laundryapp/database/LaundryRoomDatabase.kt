@@ -20,7 +20,7 @@ abstract class LaundryRoomDatabase: RoomDatabase() {
             if (INSTANCE == null) {
                 synchronized(LaundryRoomDatabase::class.java) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
-                        LaundryRoomDatabase::class.java, "laundry_app")
+                        LaundryRoomDatabase::class.java, "laundry_aplication")
                         .build()
                 }
             }

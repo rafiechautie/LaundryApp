@@ -57,13 +57,35 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Alamat Pelanggan"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNamaPegawai" />
+            android:text="Alamat Pelanggan" />
 
         <EditText
             android:id="@+id/etAlamat"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Text yang tidak dapat diisi"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvNoHp"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Nomor HP Pelanggan" />
+
+        <EditText
+            android:id="@+id/etNoHp"
             style="@style/EditText.PoppinsNormal14sp8D92A3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
